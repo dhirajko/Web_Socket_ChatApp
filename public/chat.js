@@ -6,7 +6,7 @@ const handle= document.getElementById('handle');
 const message= document.getElementById('message');
 const send= document.getElementById('send');
 const feedback= document.getElementById('feedback');
-const handlerArray=[];
+
 
 send.addEventListener('click',()=>{                             // emiting message to the server
     socket.emit('chat',{
