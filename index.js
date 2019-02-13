@@ -20,4 +20,8 @@ io.on('connection',function(socket) {
         io.sockets.emit('chat',data)
     })
 
+    socket.on('typing', (data)=>{
+        socket.broadcast.emit('typing',data)
+    })
+
 })

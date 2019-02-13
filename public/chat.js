@@ -5,6 +5,7 @@ const output= document.getElementById('output');
 const handle= document.getElementById('handle');
 const message= document.getElementById('message');
 const send= document.getElementById('send');
+const feedback= document.getElementById('feedback');
 
 
 send.addEventListener('click',()=>{                             // emiting message to the server
@@ -14,6 +15,15 @@ send.addEventListener('click',()=>{                             // emiting messa
     });
 })
 
+message.addEventListener('keypress', ()=>{
+    socket.emit('typing',handle.value)
+})
+
 socket.on('chat', (data)=>{
-    output.innerHTML+='<p><strong>'+data.handle+'</strong>' + data.message+ '</p>'
+    feedback.innerHTML="";
+    output.innerHTML+='<p><strong>'+data.handle+' : </strong>' + data.message+ '</p>'
+})
+
+socket.on('typing', (data)=>{
+    feedback.innerHTML='<p><em>'+ data+' is typing ...</em></p>'
 })
