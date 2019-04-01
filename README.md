@@ -20,6 +20,6 @@ Please make sure node has been installed on the machine first!
 > clone the repo 
 > npm install
 > node index.js or nodemon
-> go to localhost:3000 from two diffent browser and enjoy chating 
+> go to localhost:3000 from two different browser and enjoy chating 
 
 ```
