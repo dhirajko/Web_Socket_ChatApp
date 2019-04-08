@@ -7,10 +7,10 @@ const app= express();
 
 app.use(express.static('public'))
 
-const server=app.listen(3000, ()=>{
-    console.log('Connected to port 3000');
+const server=app.listen(process.env.PORT||3000, '0.0.0.0')
+  
     
-})
+
 
 const io=socket(server);                                        // connecting the socket in the express server on port 3000
 io.on('connection',function(socket) {
