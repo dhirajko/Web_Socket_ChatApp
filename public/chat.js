@@ -1,4 +1,4 @@
-const socket= io.connect(process.env.PORT)                   // connection to the localhost
+const socket= io.connect('https://chat-app-web-socket.herokuapp.com/')                   // connection to the localhost
 
 // Dom 
 const output= document.getElementById('output');
