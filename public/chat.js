@@ -1,4 +1,4 @@
-const socket= io.connect('http://localhost:3000')                   // connection to the localhost
+const socket= io.connect(process.env.PORT)                   // connection to the localhost
 
 // Dom 
 const output= document.getElementById('output');
